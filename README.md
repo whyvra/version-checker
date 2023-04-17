@@ -1,5 +1,7 @@
 # version-checker
 
+**A fork of jetstack/version-checker with updated dependencies and docker base image with automated builds.**
+
 version-checker is a Kubernetes utility for observing the current versions of
 images running in the cluster, as well as the latest available upstream. These
 checks get exposed as Prometheus metrics to be viewed on a dashboard, or _soft_
