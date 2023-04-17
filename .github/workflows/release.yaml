@@ -9,6 +9,8 @@ jobs:
   create-release:
     runs-on: ubuntu-latest
     environment: Docker
+    permissions:
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -19,9 +21,10 @@ jobs:
         with:
           images: |
             whyvra/version-checker
+            ghcr.io/whyvra/version-checker
           tags: |
             type=semver,pattern={{version}}
-            type=semver,pattern={{major}}
+            type=semver,pattern={{major}}.{{minor}}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
